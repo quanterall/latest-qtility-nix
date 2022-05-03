@@ -5,7 +5,6 @@ module Main (main) where
 import Options.Applicative.Simple
 import qualified Paths_latest_qtility_nix
 import Qtility
-import RIO.Process
 import Run
 import Types
 
@@ -24,13 +23,4 @@ main = do
             )
       )
       empty
-  lo <- logOptionsHandle stderr (optionsVerbose options)
-  pc <- mkDefaultProcessContext
-  withLogFunc lo $ \lf ->
-    let app =
-          App
-            { appLogFunc = lf,
-              appProcessContext = pc,
-              appOptions = options
-            }
-     in runRIO app run
+  run options

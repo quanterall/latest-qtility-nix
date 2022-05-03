@@ -27,7 +27,6 @@ library
   exposed-modules:
       Run
       Types
-      Util
   other-modules:
       Paths_latest_qtility_nix
   hs-source-dirs:
@@ -79,8 +78,13 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -Wwarn=deprecations -Werror=incomplete-patterns
   build-depends:
       base >=4.11 && <10
+    , conduit
+    , http-client
+    , http-client-tls
+    , http-conduit
     , qtility
     , rio
+    , zip-stream
   default-language: Haskell2010
 
 executable latest-qtility-nix
@@ -136,17 +140,21 @@ executable latest-qtility-nix
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -Wwarn=deprecations -Werror=incomplete-patterns -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.11 && <10
+    , conduit
+    , http-client
+    , http-client-tls
+    , http-conduit
     , latest-qtility-nix
     , optparse-simple
     , qtility
     , rio
+    , zip-stream
   default-language: Haskell2010
 
 test-suite latest-qtility-nix-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      UtilSpec
       Paths_latest_qtility_nix
   hs-source-dirs:
       test
@@ -197,8 +205,13 @@ test-suite latest-qtility-nix-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -Wwarn=deprecations -Werror=incomplete-patterns -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.11 && <10
+    , conduit
     , hspec
+    , http-client
+    , http-client-tls
+    , http-conduit
     , latest-qtility-nix
     , qtility
     , rio
+    , zip-stream
   default-language: Haskell2010

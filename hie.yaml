@@ -1,3 +1,13 @@
 cradle:
   stack:
-        component: latest-qtility-nix:lib
+    - path: "./src"
+      component: "latest-qtility-nix:lib"
+
+    - path: "./app/Main.hs"
+      component: "latest-qtility-nix:exe:latest-qtility-nix"
+
+    - path: "./app/Paths_latest_qtility_nix.hs"
+      component: "latest-qtility-nix:exe:latest-qtility-nix"
+
+    - path: "./test"
+      component: "latest-qtility-nix:test:latest-qtility-nix-test"

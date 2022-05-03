@@ -23,6 +23,11 @@ dependencies:
 - base >= 4.11 && < 10
 - qtility
 - rio
+- http-client-tls
+- http-client
+- http-conduit
+- zip-stream
+- conduit
 
 default-extensions:
 - ApplicativeDo
